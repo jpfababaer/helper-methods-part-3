@@ -4,18 +4,5 @@
   <p style="color: red;"><%= message %></p>
 <% end %>
 
-<%= form_with(model: @movie, data: { turbo: :false }) do |form| %>
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+<!--Rails magic vs. in edit.html.erb-->
+<%= render "movies/form", movie: @movie %>
